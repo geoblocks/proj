@@ -7,7 +7,7 @@ import * as olProj from 'ol/proj.js';
 import * as olProjProj4 from 'ol/proj/proj4.js';
 
 import somerc from './somerc.js';
-import proj4 from 'proj4';
+import proj4 from 'proj4/lib/index.js';
 
 const epsg2056def = [
   `+proj=${somerc}`,
