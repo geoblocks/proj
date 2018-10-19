@@ -25,7 +25,6 @@
     "@types/proj4": "~2.3.4",
     "ol": "~5.2.0",
     "proj4": "~2.4.4",
-    "tsconfig-paths": "3.5.0",
     "typedoc": "~0.13.0",
     "typescript": "~3.1.0-dev.20180820",
     "webpack": "~4.16.5",
