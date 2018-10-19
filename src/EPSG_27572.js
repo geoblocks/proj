@@ -25,7 +25,7 @@ const epsg27572def = [
   '+units=m',
   '+no_defs'
 ].join(' ');
-const epsg27572extent = [5168.43, 1730142.53, 1013247.20, 2698564.20];
+const epsg27572extent = [5168.43, 1730142.53, 1013247.2, 2698564.2];
 
 proj4.defs('EPSG:27572', epsg27572def);
 olProjProj4.register(proj4);
