@@ -1,0 +1,24 @@
+---
+sudo: false
+
+language: node_js
+node_js:
+  - "lts/*"
+
+cache:
+  directories:
+    - node_modules
+
+build:
+  - npm install
+
+script:
+  - npm run test
+  - npm run doc
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: node_modules/@geoblocks/base/scripts/publish-npm --force
+      on:
+        tags: true

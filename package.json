@@ -1,0 +1,37 @@
+{
+  "name": "@geoblocks/proj",
+  "version": "0.0.1",
+  "description": "Geoblocks projections",
+  "scripts": {
+    "eslint": "eslint src/*.js",
+    "eslint-fix": "eslint src/*.js --fix",
+    "build": "webpack --mode production",
+    "build-debug": "webpack --mode development",
+    "start": "webpack-dev-server --mode development --content-base dist/ --watch",
+    "typecheck": "tsc --pretty",
+    "lint": "npm run eslint && npm run typecheck",
+    "test": "npm run lint && npm run build && npm run build-debug",
+    "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --listInvalidSymbolLinks --toc none"
+  },
+  "author": "info@camptocamp.com",
+  "license": "bsd",
+  "peerDependencies": {
+    "ol": "5",
+    "proj4": "2"
+  },
+  "devDependencies": {
+    "@geoblocks/base": "~0.0.8",
+    "@types/ol": "~4.6.2",
+    "@types/proj4": "~2.3.4",
+    "eslint": "~5.3.0",
+    "eslint-config-openlayers": "~11.0.0",
+    "ol": "~5.2.0",
+    "proj4": "~2.4.4",
+    "tsconfig-paths": "3.5.0",
+    "typedoc": "git://github.com/gberaudo/typedoc#typescript-3.1.x",
+    "typescript": "~3.1.0-dev.20180820",
+    "webpack": "~4.16.5",
+    "webpack-cli": "~3.1.0",
+    "webpack-dev-server": "~3.1.5"
+  }
+}

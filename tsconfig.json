@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2017",      
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "allowJs": true,         
+    "checkJs": true,         
+    "noEmit": true,          
+
+    /* Strict Type-Checking Options */
+    "strict": false,
+    "noImplicitAny": false, // FIXME: enable this as soon as possible
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "types",
+    "typeRoots": ["types"],
+
+    "esModuleInterop": true
+  },
+  "include": [
+    "*.js",
+    "node_modules/@types/openlayers/*",
+    "types/**/*"
+  ]
+}
