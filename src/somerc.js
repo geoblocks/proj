@@ -6,7 +6,5 @@ import somerc from 'proj4/lib/projections/somerc.js';
 
 
 proj4.Proj.projections.add(somerc);
-const exports = 'somerc';
 
-
-export default exports;
+export default 'somerc';

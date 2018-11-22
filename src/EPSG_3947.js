@@ -1,10 +1,8 @@
 /**
  * @module ngeo.proj.EPSG3947
  */
-import * as olProj from 'ol/proj.js';
-
-/** @suppress {extraRequire} */
-import * as olProjProj4 from 'ol/proj/proj4.js';
+import {get as getProjection} from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
 
 import lcc from './lcc.js';
 import proj4 from 'proj4/lib/index.js';
@@ -25,8 +23,8 @@ const epsg3947def = [
 const epsg3947extent = [619993.48, 5637784.91, 2212663.72, 6731809.22];
 
 proj4.defs('EPSG:3947', epsg3947def);
-olProjProj4.register(proj4);
-olProj.get('EPSG:3947').setExtent(epsg3947extent);
+register(proj4);
+getProjection('EPSG:3947').setExtent(epsg3947extent);
 
 const exports = 'EPSG:3947';
 
