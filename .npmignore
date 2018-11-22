@@ -1,0 +1,4 @@
+.travis.yml
+tsconfig.json
+*.test.js
+*.example.js
