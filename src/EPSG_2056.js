@@ -1,8 +1,8 @@
 /**
  * @module ngeo.proj.EPSG2056
  */
-import * as olProj from 'ol/proj.js';
-import * as olProjProj4 from 'ol/proj/proj4.js';
+import {get as getProjection} from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
 
 import somerc from './somerc.js';
 import proj4 from 'proj4/lib/index.js';
@@ -22,8 +22,8 @@ const epsg2056def = [
 const epsg2056extent = [2420000, 1030000, 2900000, 1350000];
 
 proj4.defs('EPSG:2056', epsg2056def);
-olProjProj4.register(proj4);
-olProj.get('EPSG:2056').setExtent(epsg2056extent);
+register(proj4);
+getProjection.get('EPSG:2056').setExtent(epsg2056extent);
 
 const exports = 'EPSG:2056';
 

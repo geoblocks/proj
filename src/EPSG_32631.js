@@ -1,8 +1,8 @@
 /**
  * @module ngeo.proj.EPSG32631
  */
-import * as olProj from 'ol/proj.js';
-import * as olProjProj4 from 'ol/proj/proj4.js';
+import {get as getProjection} from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
 
 import utm from './utm.js';
 import proj4 from 'proj4/lib/index.js';
@@ -18,8 +18,8 @@ const epsg32631def = [
 const epsg32631extent = [166021.44, 0.0, 534994.66, 9329005.18];
 
 proj4.defs('EPSG:32631', epsg32631def);
-olProjProj4.register(proj4);
-olProj.get('EPSG:32631').setExtent(epsg32631extent);
+register(proj4);
+getProjection('EPSG:32631').setExtent(epsg32631extent);
 
 const exports = 'EPSG:32631';
 

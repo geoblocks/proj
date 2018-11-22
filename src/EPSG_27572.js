@@ -1,8 +1,8 @@
 /**
  * @module ngeo.proj.EPSG27572
  */
-import * as olProj from 'ol/proj.js';
-import * as olProjProj4 from 'ol/proj/proj4.js';
+import {get as getProjection} from 'ol/proj.js';
+import {register} from 'ol/proj/proj4.js';
 
 import lcc from './lcc.js';
 import proj4 from 'proj4/lib/index.js';
@@ -26,8 +26,8 @@ const epsg27572def = [
 const epsg27572extent = [5168.43, 1730142.53, 1013247.2, 2698564.2];
 
 proj4.defs('EPSG:27572', epsg27572def);
-olProjProj4.register(proj4);
-olProj.get('EPSG:27572').setExtent(epsg27572extent);
+register(proj4);
+getProjection('EPSG:27572').setExtent(epsg27572extent);
 
 const exports = 'EPSG:27572';
 
