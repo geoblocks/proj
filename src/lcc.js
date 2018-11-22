@@ -6,7 +6,6 @@ import lcc from 'proj4/lib/projections/lcc.js';
 
 
 proj4.Proj.projections.add(lcc);
-const exports = 'lcc';
 
 
-export default exports;
+export default 'lcc';
