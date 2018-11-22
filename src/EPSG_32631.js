@@ -1,27 +1,21 @@
 /**
- * @module ngeo.proj.EPSG32631
+ * @module
  */
-import {get as getProjection} from 'ol/proj.js';
-import {register} from 'ol/proj/proj4.js';
-
 import utm from './utm.js';
-import proj4 from 'proj4/lib/index.js';
+import {create} from './utils.js';
 
-const epsg32631def = [
-  `+proj=${utm}`,
-  '+zone=31',
-  '+ellps=WGS84',
-  '+datum=WGS84',
-  '+units=m',
-  '+no_defs'
-].join(' ');
-const epsg32631extent = [166021.44, 0.0, 534994.66, 9329005.18];
+const code = 'EPSG:32631';
 
-proj4.defs('EPSG:32631', epsg32631def);
-register(proj4);
-getProjection('EPSG:32631').setExtent(epsg32631extent);
+const def = `
+  +proj=${utm}
+  +zone=31
+  +ellps=WGS84
+  +datum=WGS84
+  +units=m
+  +no_defs
+`;
+const extent = [166021.44, 0.0, 534994.66, 9329005.18];
 
-const exports = 'EPSG:32631';
+export const proj = create(code, def, extent);
 
-
-export default exports;
+export default code;
