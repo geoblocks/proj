@@ -2,8 +2,6 @@
  * @module ngeo.proj.EPSG2056
  */
 import * as olProj from 'ol/proj.js';
-
-/** @suppress {extraRequire} */
 import * as olProjProj4 from 'ol/proj/proj4.js';
 
 import somerc from './somerc.js';

@@ -2,8 +2,6 @@
  * @module ngeo.proj.EPSG2154
  */
 import * as olProj from 'ol/proj.js';
-
-/** @suppress {extraRequire} */
 import * as olProjProj4 from 'ol/proj/proj4.js';
 
 import lcc from './lcc.js';

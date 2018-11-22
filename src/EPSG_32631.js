@@ -2,8 +2,6 @@
  * @module ngeo.proj.EPSG32631
  */
 import * as olProj from 'ol/proj.js';
-
-/** @suppress {extraRequire} */
 import * as olProjProj4 from 'ol/proj/proj4.js';
 
 import utm from './utm.js';
