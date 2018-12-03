@@ -5,12 +5,9 @@
   "scripts": {
     "eslint": "eslint src/*.js",
     "eslint-fix": "eslint src/*.js --fix",
-    "build": "webpack --mode production",
-    "build-debug": "webpack --mode development",
-    "start": "webpack-dev-server --mode development --content-base dist/ --watch",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
-    "test": "npm run lint && npm run build && npm run build-debug",
+    "test": "npm run lint && npm run doc",
     "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --listInvalidSymbolLinks --toc none"
   },
   "author": "info@camptocamp.com",
