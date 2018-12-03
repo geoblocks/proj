@@ -1,0 +1,5 @@
+extends: 'eslint-config-openlayers'
+rules:
+  no-console: 0
+  comma-dangle: 0
+  valid-jsdoc: 0

@@ -3,8 +3,8 @@
   "version": "0.3.0",
   "description": "Geoblocks projections",
   "scripts": {
-    "eslint": "eslint --config=node_modules/@geoblocks/base/.eslintrc.yml src/*.js",
-    "eslint-fix": "eslint -config=node_modules/@geoblocks/base/.eslintrc.yml src/*.js --fix",
+    "eslint": "eslint src/*.js",
+    "eslint-fix": "eslint src/*.js --fix",
     "build": "webpack --mode production",
     "build-debug": "webpack --mode development",
     "start": "webpack-dev-server --mode development --content-base dist/ --watch",
