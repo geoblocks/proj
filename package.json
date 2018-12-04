@@ -4,7 +4,6 @@
   "description": "Geoblocks projections",
   "scripts": {
     "eslint": "eslint src/*.js",
-    "eslint-fix": "eslint src/*.js --fix",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
     "test": "npm run lint && npm run doc",
