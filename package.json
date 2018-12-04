@@ -3,14 +3,10 @@
   "version": "0.3.0",
   "description": "Geoblocks projections",
   "scripts": {
-    "eslint": "eslint --config=node_modules/@geoblocks/base/.eslintrc.yml src/*.js",
-    "eslint-fix": "eslint -config=node_modules/@geoblocks/base/.eslintrc.yml src/*.js --fix",
-    "build": "webpack --mode production",
-    "build-debug": "webpack --mode development",
-    "start": "webpack-dev-server --mode development --content-base dist/ --watch",
+    "eslint": "eslint src/*.js",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
-    "test": "npm run lint && npm run build && npm run build-debug",
+    "test": "npm run lint && npm run doc",
     "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --listInvalidSymbolLinks --toc none"
   },
   "author": "info@camptocamp.com",
@@ -26,9 +22,6 @@
     "ol": "~5.3.0",
     "proj4": "~2.5.0",
     "typedoc": "~0.13.0",
-    "typescript": "~3.1.6",
-    "webpack": "~4.26.0",
-    "webpack-cli": "~3.1.2",
-    "webpack-dev-server": "~3.1.10"
+    "typescript": "~3.1.6"
   }
 }
