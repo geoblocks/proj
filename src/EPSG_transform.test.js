@@ -71,6 +71,13 @@ for (const spec of values) {
     expect(coords[1]).toBeCloseTo(spec.expected[1], 2);
   });
 
+  test(`transform from ${spec.code} to  EPSG:4326 to be correct`, () => {
+    const transform = getTransform(spec.code, 'EPSG:4326');
+    const coords = transform(spec.expected);
+    expect(coords[0]).toBeCloseTo(spec.lonlat[0], 7);
+    expect(coords[1]).toBeCloseTo(spec.lonlat[1], 7);
+  });
+
   test(`provide an OpenLayers projection for ${spec.code}`, () => {
     const proj = spec.proj;
     expect(proj.getCode()).toBe(spec.code);
