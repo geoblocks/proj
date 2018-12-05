@@ -3,6 +3,7 @@
   "include": [
     "src/*.js",
     "node_modules/@types/openlayers/*",
+    "node_modules/@types/jest/*",
     "types/**/*"
   ]
 }

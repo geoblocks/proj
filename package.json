@@ -6,8 +6,9 @@
     "eslint": "eslint src/*.js",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
-    "test": "npm run lint && npm run doc",
-    "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --listInvalidSymbolLinks --toc none"
+    "test": "npm run lint && npm run jest && npm run doc",
+    "jest": "jest",
+    "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --listInvalidSymbolLinks --toc none --exclude '**/*test*'"
   },
   "author": "info@camptocamp.com",
   "license": "bsd",
@@ -16,9 +17,15 @@
     "proj4": "2"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@geoblocks/base": "~0.1.1",
+    "@types/jest": "^23.3.10",
     "@types/ol": "~4.6.2",
     "@types/proj4": "~2.3.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
     "ol": "~5.3.0",
     "proj4": "~2.5.0",
     "typedoc": "~0.13.0",
