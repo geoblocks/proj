@@ -13,7 +13,7 @@ const values = [{
   code: 'EPSG:21781',
   proj: epsg21781Proj,
   lonlat: [6.57243, 46.51336],
-  expected: [533522, 151707],
+  expected: [533522.657, 151707.457],
   units: 'm',
   global: false
 }, {
@@ -21,7 +21,7 @@ const values = [{
   code: 'EPSG:2056',
   proj: epsg2056Proj,
   lonlat: [6.57243, 46.51336],
-  expected: [2533522, 1151707],
+  expected: [2533522.657, 1151707.457],
   units: 'm',
   global: false
 }, {
@@ -29,7 +29,7 @@ const values = [{
   code: 'EPSG:2154',
   proj: epsg2154Proj,
   lonlat: [5.641029, 45.16273],
-  expected: [907468, 6454962],
+  expected: [907468.26, 6454962.068],
   units: 'm',
   global: false
 }, {
@@ -37,7 +37,7 @@ const values = [{
   code: 'EPSG:32631',
   proj: epsg32631Proj,
   lonlat: [5.641029, 45.16273],
-  expected: [707563, 5004421],
+  expected: [707563.11, 5004421.338],
   units: 'm',
   global: false
 }, {
@@ -45,7 +45,7 @@ const values = [{
   code: 'EPSG:27572',
   proj: epsg27572Proj,
   lonlat: [5.641029, 45.16273],
-  expected: [859806, 2023478],
+  expected: [859806.91, 2023478.232],
   units: 'm',
   global: false
 }, {
@@ -53,7 +53,7 @@ const values = [{
   code: 'EPSG:3947',
   proj: epsg3947Proj,
   lonlat: [5.641029, 45.16273],
-  expected: [1907694, 5999266],
+  expected: [1907694.866, 5999266.134],
   units: 'm',
   global: false
 },
@@ -66,7 +66,9 @@ for (const spec of values) {
 
   test(`transform from EPSG:4326 to ${spec.code} to be correct`, () => {
     const transform = getTransform('EPSG:4326', spec.code);
-    expect(transform(spec.lonlat).map(Math.floor)).toEqual(spec.expected);
+    const coords = transform(spec.lonlat);
+    expect(coords[0]).toBeCloseTo(spec.expected[0], 2);
+    expect(coords[1]).toBeCloseTo(spec.expected[1], 2);
   });
 
   test(`provide an OpenLayers projection for ${spec.code}`, () => {
