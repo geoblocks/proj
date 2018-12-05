@@ -1,4 +1,3 @@
-'use strict';
 import EPSG_2056 from './EPSG_2056.js';
 
 import {getTransform} from 'ol/proj.js';
