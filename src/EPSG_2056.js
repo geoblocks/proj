@@ -4,7 +4,7 @@
 import somerc from './somerc.js';
 import {create} from './utils.js';
 
-const code = 'EPSG:2056';
+export const code = 'EPSG:2056';
 
 const def = `
   +proj=${somerc}

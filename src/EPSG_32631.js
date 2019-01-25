@@ -4,7 +4,7 @@
 import utm from './utm.js';
 import {create} from './utils.js';
 
-const code = 'EPSG:32631';
+export const code = 'EPSG:32631';
 
 const def = `
   +proj=${utm}
