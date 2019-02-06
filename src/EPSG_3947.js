@@ -4,7 +4,7 @@
 import lcc from './lcc.js';
 import {create} from './utils.js';
 
-const code = 'EPSG:3947';
+export const code = 'EPSG:3947';
 
 const def = `
   +proj=${lcc}
