@@ -28,7 +28,7 @@
     "@types/ol": "^5.3.2",
     "@types/proj4": "^2.3.4",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
     "microbundle": "^0.11.0",
     "ol": "^5.3.0",
