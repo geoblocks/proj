@@ -3,6 +3,7 @@ import * as EPSG_2154 from './EPSG_2154';
 import * as EPSG_3947 from './EPSG_3947';
 import * as EPSG_21781 from './EPSG_21781';
 import * as EPSG_27572 from './EPSG_27572';
+import * as EPSG_31254 from './EPSG_31254';
 import * as EPSG_32631 from './EPSG_32631';
 
 export {
@@ -11,5 +12,6 @@ export {
   EPSG_3947,
   EPSG_21781,
   EPSG_27572,
+  EPSG_31254,
   EPSG_32631,
 };
