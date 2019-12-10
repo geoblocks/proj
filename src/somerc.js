@@ -1,6 +1,3 @@
-/**
- * @module ngeo.proj.somerc
- */
 import proj4 from 'proj4/lib/index.js';
 import somerc from 'proj4/lib/projections/somerc.js';
 

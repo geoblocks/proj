@@ -1,6 +1,3 @@
-/**
- * @module
- */
 import tmerc from './tmerc.js';
 import {create} from './utils.js';
 
