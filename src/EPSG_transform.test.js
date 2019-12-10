@@ -5,6 +5,7 @@ import {
   EPSG_32631,
   EPSG_27572,
   EPSG_3947,
+  EPSG_31254,
 } from '.';
 
 import {getTransform} from 'ol/proj.js';
@@ -49,6 +50,13 @@ const values = [{
   code: 'EPSG:3947',
   lonlat: [5.641029, 45.16273],
   expected: [1907694.866, 5999266.134],
+  units: 'm',
+  global: false
+}, {
+  import: EPSG_31254,
+  code: 'EPSG:31254',
+  lonlat: [13.35, 47.71],
+  expected: [226395.65, 290116.70],
   units: 'm',
   global: false
 },

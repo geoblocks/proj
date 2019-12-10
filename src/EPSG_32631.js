@@ -1,6 +1,3 @@
-/**
- * @module
- */
 import utm from './utm.js';
 import {create} from './utils.js';
 

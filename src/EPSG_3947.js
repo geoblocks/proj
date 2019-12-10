@@ -1,6 +1,3 @@
-/**
- * @module
- */
 import lcc from './lcc.js';
 import {create} from './utils.js';
 

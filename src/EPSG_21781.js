@@ -1,6 +1,3 @@
-/**
- * @module
- */
 import somerc from './somerc.js';
 import {create} from './utils.js';
 
