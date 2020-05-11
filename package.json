@@ -30,9 +30,9 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^25.3.0",
     "jest": "^25.3.0",
-    "microbundle": "^0.11.0",
+    "microbundle": "^0.12.0",
     "ol": "^6.0.0",
-    "proj4": "^2.5.0",
+    "proj4": "^2.6.1",
     "typedoc": "^0.16.2",
     "typescript": "^3.1.6"
   }
