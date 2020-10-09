@@ -56,7 +56,7 @@ const values = [{
   import: EPSG_31254,
   code: 'EPSG:31254',
   lonlat: [13.35, 47.71],
-  expected: [226395.65, 290116.70],
+  expected: [290116.70, 226395.65],
   units: 'm',
   global: false
 },
