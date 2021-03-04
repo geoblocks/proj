@@ -1,8 +1,6 @@
 import lcc from './lcc.js';
 import {create} from './utils.js';
 
-export const code = 'EPSG:27572';
-
 const def = `
   +proj=${lcc}
   +lat_0=46.8
@@ -21,6 +19,6 @@ const def = `
 `;
 const extent = [5168.43, 1730142.53, 1013247.2, 2698564.2];
 
-export const proj = create(code, def, extent);
+export const proj = create('EPSG:27572', def, extent);
 
-export default code;
+export default proj;

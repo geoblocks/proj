@@ -1,8 +1,6 @@
 import somerc from './somerc.js';
 import {create} from './utils.js';
 
-export const code = 'EPSG:21781';
-
 const def = `
   +proj=${somerc}
   +lat_0=46.95240555555556
@@ -17,6 +15,6 @@ const def = `
 `;
 const extent = [420000, 30000, 900000, 350000];
 
-export const proj = create(code, def, extent);
+export const proj = create('EPSG:21781', def, extent);
 
-export default code;
+export default proj;
