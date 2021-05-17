@@ -17,7 +17,7 @@
   "author": "info@camptocamp.com",
   "license": "bsd",
   "peerDependencies": {
-    "ol": "5",
+    "ol": "6",
     "proj4": "2"
   },
   "devDependencies": {
