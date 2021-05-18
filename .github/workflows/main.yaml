@@ -1,0 +1,63 @@
+---
+name: Continuous integration
+
+on:
+  push:
+  pull_request:
+
+env:
+  HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
+
+jobs:
+  not-failed-backport:
+    runs-on: ubuntu-20.04
+    name: Test that's not a failed backport
+    timeout-minutes: 5
+    steps:
+      - run: "false"
+        if: "github.event.head_commit.message == '[skip ci] Add instructions to finish the backport.'"
+
+  main:
+    runs-on: ubuntu-20.04
+    name: Continuous integration
+    timeout-minutes: 30
+    if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
+
+    env:
+      MAIN_BRANCH: master
+      CI: true
+      PATH: /bin:/usr/bin:/usr/local/bin:/home/runner/.local/bin
+
+    steps:
+      - run: "! ls BACKPORT_TODO"
+      - run: /opt/google/chrome/chrome --version
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: camptocamp/initialise-gopass-summon-action@v2
+        with:
+          ci-gpg-private-key: ${{secrets.CI_GPG_PRIVATE_KEY}}
+          github-gopass-ci-token: ${{secrets.GOPASS_CI_GITHUB_TOKEN}}
+          patterns: npm transifex
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
+
+      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+
+      - name: Checks
+        run: c2cciutils-checks
+
+      - run: npm install
+      - run: npm run test
+      # Test minimal versions
+      - run: sed --in-place 's/>=//g' package.json
+      - run: sed --in-place 's/\^//g' package.json
+      - run: sed --in-place 's/~//g' package.json
+      - run: npm install
+      - run: npm run test

@@ -1,7 +1,14 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: '/'
+    schedule:
+      interval: weekly
+    ignore:
+      - dependency-name: none
+
+  - package-ecosystem: pip
+    directory: '/'
     schedule:
       interval: weekly
     ignore:

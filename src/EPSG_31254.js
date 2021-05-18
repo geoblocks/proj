@@ -3,7 +3,7 @@ import {create} from './utils.js';
 
 export const code = 'EPSG:31254';
 
-const def = ` 
+const def = `
   +proj=${tmerc}
   +lat_0=0
   +lon_0=10.33333333333333

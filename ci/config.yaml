@@ -1,0 +1,15 @@
+checks:
+  required_workflows:
+    main.yaml: False
+    rebuild.yaml: False
+  versions:
+    rebuild: False
+  dependabot_config:
+    update_ignore:
+      - directory: /
+        package-ecosystem: npm
+
+audit:
+  npm:
+    cwe_ignore:
+      - CWE-400
