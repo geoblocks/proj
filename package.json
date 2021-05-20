@@ -4,9 +4,15 @@
   "description": "Geoblocks projections",
   "main": "dist/proj.js",
   "module": "dist/proj.js",
-  "source": "src/index.js",
+  "geoblocks_src": "src/index.js",
+  "files": [
+    "/src",
+    "/dist",
+    "!/dist/api",
+    "!*.test.js"
+  ],
   "scripts": {
-    "build": "microbundle --format es",
+    "build": "microbundle --format es --entry src/index.js",
     "eslint": "eslint src/*.js",
     "typecheck": "tsc --pretty",
     "lint": "npm run eslint && npm run typecheck",
