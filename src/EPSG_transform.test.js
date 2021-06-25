@@ -1,12 +1,10 @@
-import {
-  EPSG_2056,
-  EPSG_21781,
-  EPSG_2154,
-  EPSG_32631,
-  EPSG_27572,
-  EPSG_3947,
-  EPSG_31254,
-} from '.';
+import EPSG_2056 from './EPSG_2056';
+import EPSG_21781 from './EPSG_21781';
+import EPSG_2154 from './EPSG_2154';
+import EPSG_32631 from './EPSG_32631';
+import EPSG_27572 from './EPSG_27572';
+import EPSG_3947 from './EPSG_3947';
+import EPSG_31254 from './EPSG_31254';
 
 import {getTransform} from 'ol/proj.js';
 
@@ -63,10 +61,6 @@ const values = [{
 ];
 
 for (const spec of values) {
-  test(`have an EPSG code ${spec.code}`, () => {
-    expect(spec.import.code).toBe(spec.code);
-  });
-
   test(`transform from EPSG:4326 to ${spec.code} to be correct`, () => {
     const transform = getTransform('EPSG:4326', spec.code);
     const coords = transform(spec.lonlat);
@@ -82,7 +76,7 @@ for (const spec of values) {
   });
 
   test(`provide an OpenLayers projection for ${spec.code}`, () => {
-    const proj = spec.import.proj;
+    const proj = spec.import;
     expect(proj.getCode()).toBe(spec.code);
     expect(proj.getUnits()).toBe(spec.units);
     expect(proj.isGlobal()).toBe(spec.global);

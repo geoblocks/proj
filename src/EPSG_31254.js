@@ -1,8 +1,6 @@
 import tmerc from './tmerc.js';
 import {create} from './utils.js';
 
-export const code = 'EPSG:31254';
-
 const def = ` 
   +proj=${tmerc}
   +lat_0=0
@@ -18,6 +16,6 @@ const def = `
 `;
 const extent = [-61758.89, 140394.51, 499917.82, 453931.14];
 
-export const proj = create(code, def, extent);
+export const proj = create('EPSG:31254', def, extent);
 
-export default code;
+export default proj;
