@@ -1,6 +1,6 @@
 {
   "name": "@geoblocks/proj",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Geoblocks projections",
   "main": "dist/proj.js",
   "module": "dist/proj.js",
