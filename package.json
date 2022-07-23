@@ -12,7 +12,7 @@
     "lint": "npm run eslint && npm run typecheck",
     "test": "npm run lint && npm run jest && npm run doc",
     "jest": "jest",
-    "doc": "typedoc --out dist/api --theme minimal --readme none --hideGenerator --exclude '**/*test*'"
+    "doc": "typedoc --out dist/api --readme none --hideGenerator --exclude '**/*test*' src/index.js"
   },
   "author": "info@camptocamp.com",
   "license": "bsd",
