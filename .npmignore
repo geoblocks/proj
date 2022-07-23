@@ -1,4 +1,5 @@
-.travis.yml
-tsconfig.json
-*.test.js
-*.example.js
+*
+!package.json
+!src/*
+src/*.test.js
+!dist/*
